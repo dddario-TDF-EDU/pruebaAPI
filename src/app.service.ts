@@ -6,7 +6,7 @@ import { Mascota } from './entity/mascota/mascota/mascota';
 export class AppService {
   private mascota1: Mascota = new Mascota('manchitas', 'perro', 4, true);
   private mascota2: Mascota = new Mascota('oso', 'gato', 0, false);
-  private mascotasArray: Mascota[] = [this.mascota1, this.mascota2]
+  private mascotasArray: Mascota[] = [this.mascota1, this.mascota2];
   // private enviaMail(paramCliente): boolean {
   //   transporter.sendMail({
   //     from: '"👻" <davidwiz.one@gmail.com>', // sender address
@@ -20,7 +20,7 @@ export class AppService {
   private enviarMail(mascotaID, paramCliente): boolean {
     function enviado(): boolean {
       let local;
-      //const nombreMascota: string = mascotasArray[mascotaID].getNombre();
+      const nombreMascota: string = this.mascotasArray[mascotaID].getNombre();
       const nombreCliente: string = paramCliente.nombre;
       transporter.sendMail(
         {
@@ -30,8 +30,8 @@ export class AppService {
           text:
             'Felicidades ' +
             nombreCliente +
-            ', se ha registrado como adoptante de ' 
-            //+ nombreMascota, // plain text body
+            ', se ha registrado como adoptante de ' +
+            nombreMascota, // plain text body
           //se puede modularizar todo este paso, buscar como más adelante, el codigo es dificil de interpretar.
         },
         function (error, info) {
