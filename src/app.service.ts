@@ -17,10 +17,9 @@ export class AppService {
   //   });
   // }
 
-  private enviarMail(mascotaID, paramCliente): boolean {
+  private enviarMail(nombreMascota, paramCliente): boolean {
     function enviado(): boolean {
       let local;
-      const nombreMascota: string = this.mascotasArray[mascotaID].getNombre();
       const nombreCliente: string = paramCliente.nombre;
       transporter.sendMail(
         {
@@ -54,7 +53,9 @@ export class AppService {
     //como paso anterior, deberiamos verificar si el email es verdadero, despues proceder a enviar una respuesta.
     let resultado: boolean = false;
     if (mascotaID < this.mascotasArray.length) {
-      resultado = this.enviarMail(mascotaID, paramCliente);
+      const nombreMascota: string = this.mascotasArray[mascotaID].getNombre();
+      //esta linea deberia ir en la funcion mail, pero por alguna razon no funciona...
+      resultado = this.enviarMail(nombreMascota, paramCliente);
     }
     if (resultado === false) {
       return 'falla en la operación revise sus datos.';
