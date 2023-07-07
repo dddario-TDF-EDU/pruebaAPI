@@ -4,15 +4,13 @@ FROM node:18.15.0
 
 ENV NODE_ENV=production
 
-WORKDIR /src
+WORKDIR dariocabrera/src/main
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY package*.json ./
 
 RUN npm install
 
 COPY . .
-
-RUN npm run build
 
 EXPOSE 8080
 
