@@ -6,6 +6,8 @@ ENV NODE_ENV=production
 
 WORKDIR dariocabrera/src/main
 
+RUN `npm install -g npm@9.8.0`
+
 COPY package*.json ./
 
 RUN npm install
