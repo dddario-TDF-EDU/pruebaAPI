@@ -69,5 +69,9 @@ export class AppService {
     }
   }
 
+  public saludar(): string {
+    return 'hola jas';
+  }
+
   //definir el paramCLiente, seria el json que contiene los datos del cliente, ahora mismo exige tener un email y un nombre.
 }
