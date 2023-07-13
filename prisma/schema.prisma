@@ -1,0 +1,12 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://sql10630776:GEdDUG9B5H@sql10.freemysqlhosting.net:3306/sql10630776"
+
+}
